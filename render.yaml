@@ -2,6 +2,7 @@ services:
   - type: web
     name: traffic-violation-api
     runtime: node
+    plan: free
     buildCommand: npm ci
     startCommand: npm run server
     healthCheckPath: /api/health
