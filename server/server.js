@@ -127,6 +127,8 @@ app.get("/api/events", (request, response) => {
   request.on("close", () => clients.delete(response));
 });
 
-app.listen(3001, () => {
-  console.log("Traffic Guard API listening on http://localhost:3001");
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Traffic Guard API listening on port ${PORT}`);
 });
